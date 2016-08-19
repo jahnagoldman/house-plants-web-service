@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * Created by jahnaariellegoldman on 8/15/16.
  */
 @Entity
-public class Make {
+public class Type {
 
     @Id
     @GeneratedValue
@@ -16,11 +16,11 @@ public class Make {
 
     private String name;
 
-    public Make(String name) {
+    public Type(String name) {
         this.name = name;
     }
 
-    public Make() {
+    public Type() {
     }
 
     public Long getId() {

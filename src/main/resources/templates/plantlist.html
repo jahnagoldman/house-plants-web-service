@@ -4,21 +4,23 @@
 <body>
 <th:block th:include="fragments/header :: header"/>
 <div th:if="${not #lists.isEmpty(plants)}">
-<h2>Van List</h2>
+<h2>Plant List</h2>
 <table class ="table table-striped">
     <tr>
-        <th>Product Id</th>
+        <th>Plant Id</th>
         <th>Name</th>
-        <th>Desc</th>
-        <th>Make</th>
+        <th>Description</th>
+        <th>Care How-To</th>
+        <th>Plant Type</th>
         <th>Image</th>
     </tr>
     <tr th:each="plant : ${plants}">
-        <td th:text="${plant.id}">Mercedes Sprinter</td>
-        <td th:text="${plant.name}">Stealthy Van</td>
-        <td th:text="${plant.desc}">ad;fjksdfjldf</td>
-        <td th:text="${plant.type.name}">Benz</td>
-        <td> <img src="../../static/images/NewBannerBOOTS_2.png" width ="300"
+        <td th:text="${plant.id}">Id</td>
+        <td th:text="${plant.name}">Name</td>
+        <td th:text="${plant.desc}">Description</td>
+        <td th:text="${plant.care}">Care</td>
+        <td th:text="${plant.type.name}">Type</td>
+        <td> <img src="../static/images/NewBannerBOOTS_2.png" width ="300"
         th:src="${plant.imgurl}"/></td>
     </tr>
 </table>

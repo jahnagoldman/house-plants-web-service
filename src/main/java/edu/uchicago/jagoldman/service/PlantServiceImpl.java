@@ -1,7 +1,7 @@
 package edu.uchicago.jagoldman.service;
 
 import edu.uchicago.jagoldman.domain.Plant;
-import edu.uchicago.jagoldman.repository.VanRepository;
+import edu.uchicago.jagoldman.repository.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,43 +10,43 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class VanServiceImpl implements VanService{
+public class PlantServiceImpl implements PlantService {
 
-    private VanRepository vanRepository;
+    private PlantRepository plantRepository;
 
     @Autowired
-    public VanServiceImpl(VanRepository vanRepository) {
-        this.vanRepository = vanRepository;
+    public PlantServiceImpl(PlantRepository plantRepository) {
+        this.plantRepository = plantRepository;
     }
 
     @Override
     public Iterable<Plant> list() {
-        return vanRepository.findAll();
+        return plantRepository.findAll();
     }
 
     @Override
     public Plant create(Plant plant) {
-        return vanRepository.save(plant);
+        return plantRepository.save(plant);
     }
 
     @Override
     public Plant read(long id) {
-        return vanRepository.findOne(id);
+        return plantRepository.findOne(id);
     }
 
     @Override
     public Plant update(long id, Plant plant) {
-        Plant plantInitial = vanRepository.findOne(id);
+        Plant plantInitial = plantRepository.findOne(id);
         plantInitial.setName(plant.getName());
         plantInitial.setDesc(plant.getDesc());
         plantInitial.setType(plant.getType());
         plantInitial.setImgurl(plant.getImgurl());
-        return vanRepository.save(plantInitial);
+        return plantRepository.save(plantInitial);
     }
 
     @Override
     public void delete(long id) {
-        vanRepository.delete(id);
+        plantRepository.delete(id);
 
     }
 }

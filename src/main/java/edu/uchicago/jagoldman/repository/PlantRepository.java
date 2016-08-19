@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by jahnaariellegoldman on 8/16/16.
  */
-public interface VanRepository extends CrudRepository<Plant, Long> {
+public interface PlantRepository extends CrudRepository<Plant, Long> {
 }

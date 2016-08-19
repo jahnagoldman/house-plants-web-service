@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang ="en" th:fragment="header">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
 </head>
+
 <body>
-$END$
+<div class="container">
+    <div th:fragment="header">
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>House Plants</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <img src="../../static/images/NewBannerBOOTS_2.png" width="600"
+                     th:src="@{https://pixabay.com/static/uploads/photo/2016/07/23/09/48/plants-in-pots-1536501__340.jpg}"/>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

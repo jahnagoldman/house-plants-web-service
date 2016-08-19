@@ -1,7 +1,7 @@
 package edu.uchicago.jagoldman.controller;
 
-import edu.uchicago.jagoldman.domain.Van;
-import edu.uchicago.jagoldman.service.VanService;
+import edu.uchicago.jagoldman.domain.Plant;
+import edu.uchicago.jagoldman.service.PlantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-public class VanController {
+public class PlantController {
 
-    private VanService vanService;
+    private PlantService plantService;
 
     @Autowired
-    public VanController(VanService vanService) {
-        this.vanService = vanService;
+    public PlantController(PlantService plantService) {
+        this.plantService = plantService;
     }
 
     //List + CRUD
@@ -30,16 +30,17 @@ public class VanController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("vans", vanService.list());
-        return "vanlist";
+        model.addAttribute("plants", plantService.list());
+        return "plantlist";
     }
+
 
 
     //create post
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public Van create(@RequestBody Van van) {
-        return vanService.create(van);
+    public Plant create(@RequestBody Plant plant) {
+        return plantService.create(plant);
 
     }
 
@@ -47,8 +48,8 @@ public class VanController {
     //read get
 
     @RequestMapping(value = "/(id)", method = RequestMethod.GET)
-    public Van read(@PathVariable(value = "id") long id) {
-        Van post = vanService.read(id);
+    public Plant read(@PathVariable(value = "id") long id) {
+        Plant post = plantService.read(id);
         return post;
 
     }
@@ -56,8 +57,8 @@ public class VanController {
     //update put
 
     @RequestMapping(value = "/(id)", method = RequestMethod.PUT)
-    public Van update(@PathVariable(value = "id") long id, @RequestBody Van van) {
-        Van post = vanService.update(id, van);
+    public Plant update(@PathVariable(value = "id") long id, @RequestBody Plant plant) {
+        Plant post = plantService.update(id, plant);
         return post;
 
     }
@@ -65,8 +66,12 @@ public class VanController {
     // delete delete
     @RequestMapping(value = "/(id)", method = RequestMethod.DELETE)
     public void delete(@PathVariable(value = "id") long id) {
-        vanService.delete(id);
+        plantService.delete(id);
     }
+
+
+//    @RequestMapping("/api")
+//    public vo
 
 
 }

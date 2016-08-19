@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by jahnaariellegoldman on 8/15/16.
  */
 @Entity
-public class Van {
+public class Plant {
 
     @Id
     @GeneratedValue
@@ -20,6 +20,9 @@ public class Van {
     @Column(columnDefinition = "TEXT")
     private String desc;
 
+    @Column(columnDefinition = "TEXT")
+    private String care;
+
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
@@ -29,15 +32,16 @@ public class Van {
 
     private String imgurl;
 
-    public Van(String name, String desc, Type type, String imgurl) {
+    public Plant(String name, String desc, String care, Type type, String imgurl) {
         this.name = name;
         this.desc = desc;
+        this.care = care;
         this.type = type;
         this.imgurl = imgurl;
         createTime = new Date();
     }
 
-    public Van() {
+    public Plant() {
     }
 
     public Long getId() {
@@ -84,9 +88,17 @@ public class Van {
         this.imgurl = imgurl;
     }
 
+    public String getCare() {
+        return care;
+    }
+
+    public void setCare(String care) {
+        this.care = care;
+    }
+
     @Override
     public String toString() {
-        return "Van{" +
+        return "Plant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +

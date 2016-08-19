@@ -5,7 +5,7 @@ import edu.uchicago.jagoldman.domain.Plant;
 /**
  * Created by jahnaariellegoldman on 8/16/16.
  */
-public interface VanService {
+public interface PlantService {
 
     //list + CRUD
 
