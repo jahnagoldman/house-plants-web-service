@@ -25,14 +25,14 @@ public class Van {
     private Date createTime;
 
     @ManyToOne
-    private Make make;
+    private Type type;
 
     private String imgurl;
 
-    public Van(String name, String desc, Make make, String imgurl) {
+    public Van(String name, String desc, Type type, String imgurl) {
         this.name = name;
         this.desc = desc;
-        this.make = make;
+        this.type = type;
         this.imgurl = imgurl;
         createTime = new Date();
     }
@@ -68,12 +68,12 @@ public class Van {
         return createTime;
     }
 
-    public Make getMake() {
-        return make;
+    public Type getType() {
+        return type;
     }
 
-    public void setMake(Make make) {
-        this.make = make;
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public String getImgurl() {
@@ -91,7 +91,7 @@ public class Van {
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
                 ", createTime=" + createTime +
-                ", make=" + make +
+                ", type=" + type +
                 ", imgurl='" + imgurl + '\'' +
                 '}';
     }

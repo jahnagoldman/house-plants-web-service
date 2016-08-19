@@ -20,6 +20,9 @@ public class Make {
         this.name = name;
     }
 
+    public Make() {
+    }
+
     public Long getId() {
         return id;
     }
