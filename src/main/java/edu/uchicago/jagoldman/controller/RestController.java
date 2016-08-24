@@ -7,15 +7,10 @@ package edu.uchicago.jagoldman.controller;
 import edu.uchicago.jagoldman.domain.Plant;
 import edu.uchicago.jagoldman.service.PlantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
-
 /**
- * Created by Adam on 7/20/2016.
+ * Created by Jahna on 8/20/2016.
  */
 
 @org.springframework.web.bind.annotation.RestController
@@ -46,41 +41,36 @@ public class RestController {
     // public void delete(@PathVariable(value="id") int id){
 
 
-
     //    //list
-    @RequestMapping( value = "/", method = RequestMethod.GET )
-    public Iterable<Plant> list(){
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public Iterable<Plant> list() {
         return PlantService.list();
     }
 
     //create
-    @RequestMapping( value = "/", method = RequestMethod.POST )
-    public Plant create(@RequestBody Plant attr){
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public Plant create(@RequestBody Plant attr) {
         return PlantService.create(attr);
     }
 
     //read
-    @RequestMapping( value = "/{id}", method = RequestMethod.GET )
-    public Plant read(@PathVariable(value="id") long id)  {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Plant read(@PathVariable(value = "id") long id) {
         Plant post = PlantService.read(id);
         return post;
     }
 
     //update
-    @RequestMapping( value = "/{id}", method = RequestMethod.PUT )
-    public Plant update(@PathVariable(value="id") long id, @RequestBody Plant attr){
-        return PlantService.update(id,attr);
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public Plant update(@PathVariable(value = "id") long id, @RequestBody Plant attr) {
+        return PlantService.update(id, attr);
     }
 
     //delete
-    @RequestMapping( value = "/{id}", method = RequestMethod.DELETE )
-    public void delete(@PathVariable(value="id") int id){
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable(value = "id") int id) {
         PlantService.delete(id);
     }
-
-
-
-
 
 
 }

@@ -5,10 +5,7 @@ import edu.uchicago.jagoldman.service.PlantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by jahnaariellegoldman on 8/16/16.
@@ -34,6 +31,10 @@ public class PlantController {
         return "plantlist";
     }
 
+    @RequestMapping(value = "/more")
+    public String getMore() {
+        return "more";
+    }
 
 
     //create post
@@ -68,10 +69,6 @@ public class PlantController {
     public void delete(@PathVariable(value = "id") long id) {
         plantService.delete(id);
     }
-
-
-//    @RequestMapping("/api")
-//    public vo
 
 
 }

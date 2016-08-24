@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<th:block th:include="fragments/header :: header"/>
+<nav class = "navbar navbar-inverse navbar-fixed-top" role = "navigation">
+
+    <div class = "navbar-header">
+        <a class = "navbar-brand" href = "http://localhost:8080">House Plants</a>
+    </div>
+
+    <div>
+        <ul class = "nav navbar-nav">
+            <li><a href = "http://localhost:8080">Main Page</a></li>
+            <li class = "active"><a href = "/more">Buying Plants</a></li>
+
+
+        </ul>
+    </div>
+
+</nav>
+<div class ="container">
+<h2>Where to Buy Plants:</h2>
+
+<table class ="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Store Name</th>
+        <th>Location</th>
+        <th>Phone Number</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>The Home Depot</td>
+        <td>2665 N Halsted Street, Chicago, IL 60614</td>
+        <td>(773) 472-7740</td>
+    </tr>
+
+    <tr>
+        <td>Lowe's Home Improvement</td>
+        <td>1360 N Ashland Ave, Chicago, IL 60622</td>
+        <td>(773) 269-2560</td>
+    </tr>
+
+    <tr>
+        <td>Adams And Son Gardens</td>
+        <td>1057 N California Ave, Chicago, IL 60622</td>
+        <td>(773) 235-0991</td>
+    </tr>
+    <tr>
+        <td>Gethsemane Gardens</td>
+        <td>5739 N Clark St, Chicago, IL 60660</td>
+        <td>(773) 878-5915</td>
+    </tr>
+    <tr>
+        <td>Belmont Flower Market</td>
+        <td>2532 N Clark St, Chicago, IL 60614</td>
+        <td>(773) 529-8770</td>
+    </tr>
+    </tbody>
+
+</table>
+</div>
+
+</body>
+</html>
