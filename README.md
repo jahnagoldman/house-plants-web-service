@@ -1,5 +1,5 @@
 # House Plants Web-Service
-This is a custom Spring Boot application with information on various house plants that I created for my Advanced Java Programming class final project. 
+This is a custom Spring Boot application with information on various house plants, that also is a RESTful web service with an API serving up JSON.
 
 ### About The Application
 - It includes a One to Many relationship using an H2 in-memory database to display application information.
